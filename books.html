@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Books Store — CSB Publications</title>
+<link rel="icon" href="assets/img/just_logo.png">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/v2.css">
+</head>
+<body data-page="books">
+<main>
+  <section class="phero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><span>Books</span></nav>
+      <h1 class="rv">CSB <em>Publications.</em></h1>
+      <p class="lead rv">Books written by our faculty — AP &amp; TS current affairs, UPSC subject books and monthly magazines. Pay securely online and get them delivered anywhere in India.</p>
+      <div class="meta rv" style="margin-top:20px"><span class="pill">Secure payment · UPI · Cards · Net banking</span><span class="pill">Free delivery above ₹499</span><span class="pill">Dispatch in 48 hours</span></div>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="feature-post rv" style="background:#000676;border:0;color:#D9DBFF">
+        <div style="padding:clamp(24px,4vw,48px) 18%;background:rgba(255,255,255,.06)"><div data-cover="ap-ca"></div></div>
+        <div class="body">
+          <span class="pill pill-live" style="align-self:flex-start;background:rgba(255,255,255,.12);color:#fff">Bestseller · 2026 edition</span>
+          <h2 style="color:#fff">AP Current Affairs <em style="color:#FF5A5A">2026</em></h2>
+          <p>Andhra Pradesh schemes, budget, economy, appointments and events — compiled for APPSC Group 1 &amp; 2. Available in English and Telugu.</p>
+          <div class="pr" style="display:flex;gap:10px;align-items:baseline"><b style="font-family:var(--serif);font-size:34px;color:#fff">₹349</b><s>₹449</s><span style="color:#7CF0DF;font-weight:800">22% off</span></div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-red" type="button" data-buy="ap-ca">Buy now</button><button class="btn btn-ghost" type="button" data-add="ap-ca" style="color:#fff;border-color:rgba(255,255,255,.3)">Add to cart</button><a class="btn btn-ghost" href="book-detail.html?id=ap-ca" style="color:#fff;border-color:rgba(255,255,255,.3)">Preview</a></div>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <div class="chips" data-filter-group="#shop" role="group" aria-label="Filter books">
+          <button class="chip on" type="button" data-f="all">All books</button>
+          <button class="chip" type="button" data-f="civils">UPSC Civils</button>
+          <button class="chip" type="button" data-f="state">APPSC / TGPSC</button>
+          <button class="chip" type="button" data-f="magazine">Magazines</button>
+        </div>
+        <label class="searchbox"><svg class="ic" viewBox="0 0 24 24"><path d="M21 21l-4.3-4.3"/><circle cx="11" cy="11" r="7"/></svg><span class="sr">Search books</span><input placeholder="Search books…" data-search="#shop"></label>
+      </div>
+
+      <div class="grid g4" id="shop" data-books="all"></div>
+
+      <div class="grid g3" style="margin-top:72px">
+        <div class="box rv"><span class="eyebrow">Payments</span><h3 style="margin-top:10px">100% secure checkout</h3><p class="muted">UPI, debit &amp; credit cards, net banking and wallets through a trusted payment gateway.</p></div>
+        <div class="box rv"><span class="eyebrow">Delivery</span><h3 style="margin-top:10px">Across India</h3><p class="muted">Dispatched within 48 hours with tracking. Or pick up from any of our three branches.</p></div>
+        <div class="box rv"><span class="eyebrow">Bulk orders</span><h3 style="margin-top:10px">Libraries &amp; colleges</h3><p class="muted">Special pricing for 10+ copies. <button class="link" type="button" data-callback style="background:none;border:0;padding:0;cursor:pointer;font:inherit">Request a quote</button></p></div>
+      </div>
+    </div>
+  </section>
+</main>
+<div id="site-footer"></div>
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Checkout — CSB Publications</title>
+<link rel="icon" href="assets/img/just_logo.png">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/v2.css">
+</head>
+<body data-page="books">
+<main>
+  <!-- Checkout -->
+  <section class="phero" data-stage="checkout">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><a href="books.html">Books</a><span>/</span><span>Checkout</span></nav>
+      <h1 style="font-size:clamp(40px,6vw,72px)">Secure <em>checkout.</em></h1>
+      <div class="steps-bar" style="margin-top:24px"><span class="on"><i>1</i>Cart</span><span>—</span><span class="on"><i>2</i>Delivery &amp; payment</span><span>—</span><span><i>3</i>Confirmation</span></div>
+
+      <div class="checkout">
+        <form class="box form" data-checkout style="padding:clamp(22px,4vw,40px)">
+          <h2 class="h3">Delivery details</h2>
+          <div class="row2"><div class="field"><label for="ck-n">Full name</label><input class="input" id="ck-n" required></div><div class="field"><label for="ck-p">Mobile</label><input class="input" id="ck-p" type="tel" required></div></div>
+          <div class="field"><label for="ck-e">Email (for invoice)</label><input class="input" id="ck-e" type="email" required></div>
+          <div class="field"><label for="ck-a">Address</label><textarea class="input" id="ck-a" required style="min-height:90px"></textarea></div>
+          <div class="row2"><div class="field"><label for="ck-c">City</label><input class="input" id="ck-c" required></div><div class="field"><label for="ck-s">State</label><select class="input" id="ck-s"><option>Andhra Pradesh</option><option>Telangana</option><option>Karnataka</option><option>Tamil Nadu</option><option>Other</option></select></div><div class="field"><label for="ck-z">PIN code</label><input class="input" id="ck-z" inputmode="numeric" required></div></div>
+
+          <h2 class="h3" style="margin-top:12px">Payment method</h2>
+          <div class="paymethods">
+            <label class="pm"><input type="radio" name="pm" value="upi" checked><div><b>UPI</b><span>Google Pay, PhonePe, Paytm, BHIM</span></div></label>
+            <label class="pm"><input type="radio" name="pm" value="card"><div><b>Debit / Credit card</b><span>Visa, Mastercard, RuPay</span></div></label>
+            <label class="pm"><input type="radio" name="pm" value="nb"><div><b>Net banking</b><span>All major Indian banks</span></div></label>
+            <label class="pm"><input type="radio" name="pm" value="cod"><div><b>Pay at branch / cash on delivery</b><span>Hyderabad, Vijayawada, Tirupati</span></div></label>
+          </div>
+          <button class="btn btn-red" type="submit" data-pay style="margin-top:8px">Pay securely</button>
+          <p class="small muted">By placing the order you agree to our Terms, Refund &amp; Shipping Policy.</p>
+        </form>
+
+        <aside class="box sticky" style="padding:26px">
+          <h2 class="h3" style="margin-bottom:16px">Order summary</h2>
+          <div data-checkout-summary style="display:grid;gap:14px"></div>
+          <div style="display:grid;gap:10px;margin-top:20px;padding-top:18px;border-top:1px solid var(--line)">
+            <div class="row-sum"><span class="muted">Subtotal</span><span data-sum="sub">₹0</span></div>
+            <div class="row-sum"><span class="muted">Delivery</span><span data-sum="del">Free</span></div>
+            <div class="row-sum total"><span>Total</span><span data-sum="total">₹0</span></div>
+          </div>
+          <form class="news" style="margin-top:18px;background:var(--bg)" onsubmit="return false"><label class="sr" for="cpn">Coupon code</label><input id="cpn" placeholder="Coupon code"><button class="btn btn-ghost btn-sm" type="submit">Apply</button></form>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Confirmation -->
+  <section class="phero" data-stage="done" hidden>
+    <div class="wrap" style="max-width:720px">
+      <div class="box center" style="padding:48px 24px">
+        <div class="tick">✓</div>
+        <h1 style="font-size:clamp(34px,5vw,56px);margin-top:12px">Order <em>confirmed.</em></h1>
+        <p class="lead" style="margin-top:12px">Order <b id="order-id"></b> · <span id="order-amt"></span></p>
+        <p class="muted" style="margin-top:10px">A confirmation and invoice have been sent to your email and WhatsApp. Your books will be dispatched within 48 hours.</p>
+        <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:24px"><a class="btn btn-blue" href="books.html">Continue shopping</a><a class="btn btn-ghost" href="index.html">Back to home</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Payment gateway (mock of a hosted gateway such as Razorpay / PayU / Cashfree) -->
+<div class="scrim" id="gateway" role="dialog" aria-label="Payment">
+  <div class="gw">
+    <div class="gw-head"><img src="assets/img/just_logo.png" alt=""><div><b>CSB Publications</b><span>Secure payment</span></div><div class="amt" id="gw-amt">₹0</div></div>
+    <div class="gw-step" data-gs="pay">
+      <div class="gw-tabs"><button type="button" class="on" data-gw="upi">UPI</button><button type="button" data-gw="card">Card</button><button type="button" data-gw="nb">Net banking</button><button type="button" data-gw="wallet">Wallet</button></div>
+      <div class="gw-body">
+        <div class="gw-pane on" data-gp="upi">
+          <div class="upi-apps"><button type="button" class="on">GPay</button><button type="button">PhonePe</button><button type="button">Paytm</button><button type="button">BHIM</button></div>
+          <div class="field"><label for="upi-id">Or enter UPI ID</label><input class="input" id="upi-id" placeholder="name@okaxis"></div>
+          <div class="qr" aria-label="Sample QR code"></div><p class="small muted center">Scan with any UPI app</p>
+        </div>
+        <div class="gw-pane" data-gp="card">
+          <div class="field"><label for="cn">Card number</label><input class="input" id="cn" placeholder="4111 1111 1111 1111" inputmode="numeric"></div>
+          <div class="row2"><div class="field"><label for="ce">Expiry</label><input class="input" id="ce" placeholder="MM / YY"></div><div class="field"><label for="cv">CVV</label><input class="input" id="cv" placeholder="•••" inputmode="numeric"></div></div>
+          <div class="field"><label for="ch">Name on card</label><input class="input" id="ch"></div>
+        </div>
+        <div class="gw-pane" data-gp="nb"><div class="banks"><button type="button" class="on">SBI</button><button type="button">HDFC</button><button type="button">ICICI</button><button type="button">Axis</button><button type="button">Kotak</button><button type="button">Union</button></div></div>
+        <div class="gw-pane" data-gp="wallet"><div class="banks"><button type="button" class="on">Paytm</button><button type="button">PhonePe</button><button type="button">Amazon Pay</button></div></div>
+        <button class="btn btn-red" type="button" data-gw-pay style="width:100%">Pay now</button>
+      </div>
+    </div>
+    <div class="gw-step gw-body center" data-gs="wait" hidden><div class="spin"></div><b style="color:var(--ink)">Processing payment…</b><p class="small muted">Please don't close this window.</p></div>
+    <div class="gw-foot"><span>🔒 256-bit SSL secured</span><span>Demo gateway — no real payment</span></div>
+  </div>
+  <button class="tool" type="button" data-close aria-label="Close" style="position:fixed;top:20px;right:20px"><svg class="ic" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+</div>
+<div id="site-footer"></div>
+<script src="assets/app.js"></script>
+</body>
+</html>
