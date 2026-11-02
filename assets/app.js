@@ -141,7 +141,7 @@
   var nav =
     '<div class="progress" id="progress"></div>' +
     '<header class="nav" id="nav"><div class="nav-bar">' +
-      '<a class="brand" href="index.html"><img src="assets/img/just_logo.png" alt=""><span><b>CSB IAS Academy</b><small>HYDERABAD · VIJAYAWADA · TIRUPATI</small></span></a>' +
+      '<a class="brand" href="index.html" aria-label="CSB IAS Academy — home"><img class="brand-logo" src="assets/img/logo.png" alt="CSB IAS Academy — The Road Map to Mussoorie · Hyderabad | Vijayawada" width="350" height="100"></a>' +
       '<nav class="menu" aria-label="Main">' +
         '<a href="index.html"' + onIf("home") + ">Home</a>" +
         menuBtn(M.about) + menuBtn(M.courses) + menuBtn(M.results) + menuBtn(M["current-affairs"]) +
